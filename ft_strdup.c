@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:53:10 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/06/16 15:49:42 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:37:41 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strdup(const char *s1)
 	size_t	size;
 
 	size = ft_strlen(s1);
-	s2 = malloc(size * sizeof(char));
-	ft_memcpy(s2, s1, size);
+	s2 = (char *)malloc((size + 1) * sizeof(char));
+	if (!s2)
+		return (NULL);
+	ft_strlcpy(s2, s1, size);
 	return (s2);
 }

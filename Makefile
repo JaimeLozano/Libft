@@ -6,7 +6,7 @@
 #    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/06/16 16:36:50 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/06/16 17:17:03 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS		=	ft_isalpha.c	\
 				ft_atoi.c		\
 				ft_calloc.c		\
 				ft_strdup.c
-#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
+
 NAME		= libft.a
 
 OBJS		= $(SRCS:c=o)
@@ -46,9 +46,6 @@ AR			= ar r
 RM			= rm -f
 
 CFLAGS		= -Wall -Wextra -Werror
-
-%.o : %.c
-	${CC} $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			${AR} $(NAME) $(OBJS)
