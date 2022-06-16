@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlozano- <jlozano-@student.42madrid>       +#+  +:+       +#+         #
+#    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/06/13 16:49:51 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/06/16 16:36:50 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,12 @@ SRCS		=	ft_isalpha.c	\
 				ft_strrchr.c	\
 				ft_strncmp.c	\
 				ft_memchr.c		\
-				ft_memcp.c		\
+				ft_memcmp.c		\
 				ft_strnstr.c	\
 				ft_atoi.c		\
 				ft_calloc.c		\
 				ft_strdup.c
-
+#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
 NAME		= libft.a
 
 OBJS		= $(SRCS:c=o)
@@ -45,10 +45,10 @@ AR			= ar r
 
 RM			= rm -f
 
-CC_FLAGS	= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 
 %.o : %.c
-	${CC} $(CC_FLAGS) -c $< -o $@
+	${CC} $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			${AR} $(NAME) $(OBJS)
