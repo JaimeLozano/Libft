@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_isalpha.c	\
+SRCS		=	ft_isspace.c	\
+				ft_isalpha.c	\
 				ft_isdigit.c	\
 				ft_isalnum.c	\
 				ft_isascii.c	\

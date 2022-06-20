@@ -21,6 +21,6 @@ char	*ft_strdup(const char *s1)
 	s2 = (char *)malloc((size + 1) * sizeof(char));
 	if (!s2)
 		return (NULL);
-	ft_strlcpy(s2, s1, size);
+	ft_strlcpy(s2, s1, size + 1);
 	return (s2);
 }

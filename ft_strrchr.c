@@ -23,9 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 		return (s_aux + i);
 	while (i != 0)
 	{
+		i--;
 		if (s_aux[i] == (char)c)
 			return (s_aux + i);
-		i--;
 	}
 	return (NULL);
 }
