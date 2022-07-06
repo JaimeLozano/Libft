@@ -6,7 +6,7 @@
 #    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/06/16 17:17:03 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/07/06 12:15:17 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,10 @@ SRCS		=	ft_isspace.c	\
 				ft_strnstr.c	\
 				ft_atoi.c		\
 				ft_calloc.c		\
-				ft_strdup.c
+				ft_strdup.c		\
+				ft_substr.c		\
+				ft_strjoin.c	\
+				ft_strtrim.c
 
 NAME		= libft.a
 
@@ -49,15 +52,15 @@ RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
 $(NAME):	$(OBJS)
-			${AR} $(NAME) $(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	${RM} $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	${RM} $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

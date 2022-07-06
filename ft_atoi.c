@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 19:56:26 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/06/16 12:51:33 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:15:53 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,31 @@
 
 int	ft_atoi(const char *str)
 {
+	long int	result;
 	size_t	i;
-	size_t	z;
-	size_t	sign;
+	int	sign;
 
+	result = 0;
 	i = 0;
-	z = 0;
 	sign = 1;
-	while (ft_isspace(str[z]))
-		z++;
+	while (ft_isspace(str[i]))
+		i++;
 	if (*str == '\0')
 		return (0);
-	if (str[z] == '-' || str[z] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[z] == '-')
+		if (str[i] == '-')
 			sign = -1;
-		z++;
+		i++;
 	}
-	while (str[z] && str[z] >= '0' && str[z] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		i = i * 10 + str[z] - '0';
-		z++;
+		if (result * sign > 2147483647)
+			return (-1);
+		else if (result * sign < -2147483648)
+			return (0);
+		result = result * 10 + (size_t)(str[i] - '0');
+		i++;
 	}
-	return (i * sign);
+	return (result * sign);
 }

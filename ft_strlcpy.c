@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:41:50 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/06/15 16:15:51 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:03:50 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 	size_t	dstlimit;
 
-	if (src == 0)
-		return (0);
 	src_len = ft_strlen (src);
-	if (dst == 0 || dstsize == 0)
+	if (dstsize == 0)
 		return (src_len);
 	dstlimit = dstsize - 1;
 	len = src_len;
