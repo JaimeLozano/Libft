@@ -6,7 +6,7 @@
 #    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/07/06 12:15:17 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/07/06 19:45:48 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRCS		=	ft_isspace.c	\
 				ft_strdup.c		\
 				ft_substr.c		\
 				ft_strjoin.c	\
-				ft_strtrim.c
+				ft_strtrim.c	\
+				ft_split.c
 
 NAME		= libft.a
 
