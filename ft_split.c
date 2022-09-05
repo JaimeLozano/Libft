@@ -6,16 +6,16 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 12:33:18 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/09/01 13:55:08 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:26:48 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -33,7 +33,7 @@ static int	count_words(const char *str, char c)
 	return (i);
 }
 
-static char	*word_dup(const char *str, int start, int finish)
+char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
@@ -51,11 +51,11 @@ char	**ft_split(char const *s, char c)
 	char	**s_out;
 	size_t	i;
 	size_t	j;
-	int	index;
+	int		index;
 
 	s_out = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !s_out)
-		return (0);	
+		return (0);
 	i = 0;
 	j = 0;
 	index = -1;

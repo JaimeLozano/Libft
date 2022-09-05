@@ -6,7 +6,7 @@
 #    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/09/02 13:25:24 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/09/05 13:16:23 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,17 @@ SRCS		=	ft_isspace.c	\
 				ft_putendl_fd.c	\
 				ft_putnbr_fd.c
 
+SRCS_B		=	ft_lstnew.c			\
+				ft_lstadd_front.c	\
+				ft_lstsize.c		\
+				ft_lstlast.c		\
+				ft_lstadd_back.c
+
 NAME		= libft.a
 
 OBJS		= $(SRCS:c=o)
+
+OBJS_B		= $(SRCS_B:c=o)
 
 CC			= gcc
 
@@ -65,11 +73,14 @@ $(NAME):	$(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: clean all fclean re
+bonus: $(OBJS_B)
+		$(AR) $(NAME) $(OBJS_B)
+
+.PHONY: clean all fclean re bonus
