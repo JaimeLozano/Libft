@@ -6,7 +6,7 @@
 #    By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 16:49:49 by jlozano-          #+#    #+#              #
-#    Updated: 2022/09/05 13:16:23 by jlozano-         ###   ########.fr        #
+#    Updated: 2022/09/06 19:06:09 by jlozano-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,11 @@ SRCS_B		=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
 				ft_lstsize.c		\
 				ft_lstlast.c		\
-				ft_lstadd_back.c
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c
 
 NAME		= libft.a
 
