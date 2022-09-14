@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 18:55:42 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/09/06 18:55:50 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:08:58 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *next;
+	t_list	*next;
 
 	if (lst != NULL)
 	{
