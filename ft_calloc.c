@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 12:19:08 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/07/05 16:56:26 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:12:58 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*s;
 
+	if (count >= SIZE_MAX || size >= SIZE_MAX)
+		return (NULL);
 	s = malloc(size * count);
 	if (!s)
 		return (NULL);
