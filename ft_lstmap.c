@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/02 13:22:04 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/09/14 15:34:15 by jlozano-         ###   ########.fr       */
+/*   Created: 2022/09/06 19:07:16 by jlozano-          #+#    #+#             */
+/*   Updated: 2022/09/14 12:37:29 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {
-	unsigned int	number;
+	t_list	*first;
+	t_list	*new;
 
-	if (n < 0)
+	if (!f || !del)
+		return (NULL);
+	first = NULL;
+	while (lst)
 	{
-		ft_putchar_fd('-', fd);
-		number = -n;
+		if (!(new = ft_lstnew((*f)(lst->content))))
+		{
+			while (first)
+			{
+				new = first->next;
+				(*del)(first->content);
+				free(first);
+				first = new;
+			}
+			lst = NULL;
+			return (NULL);
+		}
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
 	}
-	else
-		number = n;
-	if (number > 9)
-	{
-		ft_putnbr_fd(number / 10, fd);
-		number %= 10;
-	}
-	ft_putchar_fd(number + '0', fd);
+	return (first);
 }

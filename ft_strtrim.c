@@ -6,7 +6,7 @@
 /*   By: jlozano- <jlozano-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 18:29:07 by jlozano-          #+#    #+#             */
-/*   Updated: 2022/07/06 18:03:05 by jlozano-         ###   ########.fr       */
+/*   Updated: 2022/09/14 12:54:24 by jlozano-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_char_ispresent(const char c, char const *set)
 {
 	int	i;
-	
+
 	i = 0;
 	while (set[i])
 	{
@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (end > start)
 	{
-		s2[i++] = s1[start++]; 
+		s2[i++] = s1[start++];
 	}
 	s2[i] = '\0';
 	return (s2);
